@@ -17,58 +17,61 @@ i1 =  cv2.imread('Lamina-biopsia.jpg', 1) # Color
 
 #%% 7. Normalização entre 0 e 1, convertendo a intensidade para tipo float
 
-in0 = skimage.img_as_float(i0)
-in1 = skimage.img_as_float(i1)
+im0 = skimage.img_as_float(i0)
+im1 = skimage.img_as_float(i1)
 
 #%% 8. Obtenção das dimensões da matriz que representa a imagem
 
-(M0, N0) = np.shape(in0) # M0 linhas e N0 colunas
-(M1, N1, D1) = np.shape(in1) # M1 linhas, N1 colunas e D1 camadas
+(M0, N0) = np.shape(im0) # M0 linhas e N0 colunas
+(M1, N1, D1) = np.shape(im1) # M1 linhas, N1 colunas e D1 camadas
 
 #%% 10. Identificação e armazenamento de valores de interesse
 
-maximo0 = np.max(in0)
-minimo0 = np.min(in0)
-media0 = np.mean(in0)
-dP0 = np.std(in0)
+max0 = np.max(im0)
+min0 = np.min(im0)
+mean0 = np.mean(im0)
+std0 = np.std(im0)
 
-maximo1 = np.max(in1)
-minimo1 = np.min(in1)
-media1 = np.mean(in1)
-dP1 = np.std(in1)
+max1 = np.max(im1)
+min1 = np.min(im1)
+mean1 = np.mean(im1)
+std1 = np.std(im1)
 
 #%% 11. Plot gráfico das imagens
 plt.figure()
 plt.ylabel('Linhas - M0')
 plt.xlabel('Colunas - N0')
 plt.title('image0 - raioXTorax')
-plt.imshow(in0, cmap = 'gray') # cmap = 'jet' <- mapa de calor
+plt.imshow(im0, cmap = 'gray') # cmap = 'jet' <- mapa de calor
 plt.colorbar() # Mostra o gradiente de cores e respectivos valores normalizados
 
 plt.figure()
 plt.ylabel('Linhas - M1')
 plt.xlabel('Colunas - N1')
 plt.title('image1 - Lamina-biopsia RGB')
-plt.imshow(in1, cmap = 'jet') # cmap = 'jet' <- mapa de calor RGB
+plt.imshow(im1, cmap = 'jet') # cmap = 'jet' <- mapa de calor RGB
 plt.colorbar()
 
 plt.figure()
 plt.ylabel('Linhas - M1')
 plt.xlabel('Colunas - N1')
 plt.title('image1.0 - Lamina-biopsia Blue')
-plt.imshow(in1[:,:,0], cmap = 'gray') # cmap = 'Blues' <- mapa de calor B
+plt.imshow(im1[:,:,0], cmap = 'Blues') # cmap = 'Blues' <- mapa de calor B
 plt.colorbar()
+plt.savefig('Lamina-biopsia-Blue')
 
 plt.figure()
 plt.ylabel('Linhas - M1')
 plt.xlabel('Colunas - N1')
 plt.title('image1.1 - Lamina-biopsia Green')
-plt.imshow(in1[:,:,1], cmap = 'gray') # cmap = 'Greens' <- mapa de calor G
+plt.imshow(im1[:,:,1], cmap = 'Greens') # cmap = 'Greens' <- mapa de calor G
 plt.colorbar()
+plt.savefig('Lamina-biopsia-Green')
 
 plt.figure()
 plt.ylabel('Linhas - M1')
 plt.xlabel('Colunas - N1')
 plt.title('image1.2 - Lamina-biopsia Red')
-plt.imshow(in1[:,:,2], cmap = 'gray') # cmap = 'Reds' <- mapa de calor R
+plt.imshow(im1[:,:,2], cmap = 'Reds') # cmap = 'Reds' <- mapa de calor R
 plt.colorbar()
+plt.savefig('Lamina-biopsia-Red')
