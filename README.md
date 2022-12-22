@@ -1,4 +1,4 @@
-# Lab1-Imagens-Biomedicas
+# Lab1 Imagens Biomedicas - UNIFESP SJC
 Desenvolvimento de rotinas iniciais de abertura de imagens biomédicas e manipulação dos canais RGB.
 
 Separação dos canais RGB de uma lâmina de biópsia.
