@@ -1,7 +1,7 @@
 # Lab1-Imagens-Biomedicas
-Laboratório 1 da disciplina de Imagens Biomédicas
+Desenvolvimento de rotinas iniciais de abertura de imagens biomédicas e manipulação dos canais RGB.
 
-Separação dos canais RGB de uma lâmina de biópsia
+Separação dos canais RGB de uma lâmina de biópsia.
 
 <div>
 <img src="https://user-images.githubusercontent.com/86500603/153467587-d84dfebb-d007-48c0-a8f3-2357af24b52b.jpg" width = "909">
